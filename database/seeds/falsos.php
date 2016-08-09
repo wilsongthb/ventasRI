@@ -37,5 +37,14 @@ class falsos extends Seeder
         for ($i=0; $i < 180; $i++) { 
             DB::table("medida")->insert(["descripcion" => strtoupper($faker->word),'created_at' => date('Y-m-d H:m:s'),'updated_at' => date('Y-m-d H:m:s')]);
         }
+        #tipocomprobante
+        for ($i=0; $i < 10; $i++) { 
+            DB::table("tipocomprobante")->insert([
+                "descripcion" => $faker->word,
+                "abreviatura" => str_random(4),
+                "activo" => "0",
+                'created_at' => date('Y-m-d H:m:s'),'updated_at' => date('Y-m-d H:m:s')
+            ]);
+        }
     }
 }
